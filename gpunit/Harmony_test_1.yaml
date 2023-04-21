@@ -1,11 +1,11 @@
 
 name: Harmony Test 1
-# description: created from job 91220
-# ET(ms): 258000# from server:  https://beta.genepattern.org/gp/
+# description: created from job 91351
+# ET(ms): 585000# from server:  https://beta.genepattern.org/gp/
 module: Harmony
 # lsid: urn:lsid:genepattern.org:module.analysis:00435
 params: 
-    "Input.RDS.Files": "inputs/Input.RDS.Files.list.txt"
+    "Input.RDS.Files": ["./inputs/HNSCC.rds", "./inputs/MEL.rds"]
     "Output.Name": "harmonized_data"
     "Data.Set.Names": "[]"
     "Group.Name": "dataset_name"
@@ -18,8 +18,8 @@ params:
     "nclust": ""
     "tau": "0"
     "block.size": "0.05"
-    "max.iter.harmony": "10"
-    "max.iter.cluster": "20"
+    "max.iter.harmony": "2"
+    "max.iter.cluster": "2"
     "stop.early.cluster": "TRUE"
     "epsilon.cluster": "0.00005"
     "stop.early.harmony": "TRUE"

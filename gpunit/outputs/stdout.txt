@@ -4,7 +4,7 @@ $help
 [1] FALSE
 
 $file_list
-[1] "/opt/gpbeta_2/gp_home/users/jzl010/uploads/tmp/run737024634429449260.tmp/Input.RDS.Files.list.txt"
+[1] "/opt/gpbeta_2/gp_home/users/jzl010/uploads/tmp/run1933396705467641413.tmp/Input.RDS.Files.list.txt"
 
 $output_file
 [1] "harmonized_data"
@@ -31,10 +31,10 @@ $block.size
 [1] 0.05
 
 $max.iter.harmony
-[1] 10
+[1] 2
 
 $max.iter.cluster
-[1] 20
+[1] 2
 
 $epsilon.cluster
 [1] 5e-05
@@ -61,17 +61,17 @@ $project.dim
 [1] TRUE
 
 [1] "================================================"
-[1] "/opt/gpbeta_2/gp_home/users/jzl010/uploads/tmp/run737024634429449260.tmp/Input.RDS.Files.list.txt"
+[1] "/opt/gpbeta_2/gp_home/users/jzl010/uploads/tmp/run1933396705467641413.tmp/Input.RDS.Files.list.txt"
 [1] "About to read"
-[1] "/opt/gpbeta_2/gp_home/users/jzl010/uploads/tmp/run8061682283169880196.tmp/Input.RDS.Files/1/ctrl.seurat.rds"
-[1] "Using ctrl.seurat as the name of the column"
+[1] "/opt/gpbeta_2/gp_home/users/jzl010/uploads/tmp/run4653117758377230361.tmp/Input.RDS.Files/1/HNSCC.rds"
+[1] "Using HNSCC as the name of the column"
 [1] "About to read"
-[1] "/opt/gpbeta_2/gp_home/users/jzl010/uploads/tmp/run7060867992218125648.tmp/Input.RDS.Files/2/stim.seurat.rds"
-[1] "Using stim.seurat as the name of the column"
+[1] "/opt/gpbeta_2/gp_home/users/jzl010/uploads/tmp/run3736923318873744857.tmp/Input.RDS.Files/2/MEL.rds"
+[1] "Using MEL as the name of the column"
 [1] "Saved file!"
 An object of class Seurat 
-14053 features across 25894 samples within 1 assay 
-Active assay: RNA (14053 features, 2000 variable features)
+499 features across 10547 samples within 1 assay 
+Active assay: RNA (499 features, 499 variable features)
  2 dimensional reductions calculated: pca, harmony
 [1] "Making plot!"
 [1] "Using default colors to make plot!"
