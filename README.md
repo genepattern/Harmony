@@ -1,7 +1,7 @@
 # About Harmony
 
 ## What is Harmony?
-Harmony is a tool used to correct batch effects in single-cell RNA seq datasets.
+Harmony is a tool used to correct batch effects in single-cell RNA seq datasets. Batch effects are differences in your dataset that don't reflect biological phenomena. These batch effects could be caused by a slight difference in the sampling protocol. As seen in the plot below, this can lead to the data becoming separated by non-biological factors. Harmony aims to remove these batch effects, allowing for the integration of multiple different datasets.
 ![Alt text](gpunit/outputs/SideToSidePlot.png?raw=true "Harmony")
  
 ## How to use Harmony
