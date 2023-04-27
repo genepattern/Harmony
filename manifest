@@ -1,7 +1,7 @@
-# Harmony  urn:lsid:8080.gpserver.ip-172-31-26-71.ip-172-31-26-71.ec2.internal:genepatternmodules:676:3.13
-#Thu Apr 27 19:43:41 UTC 2023
+#Harmony
+#Thu Apr 27 19:48:50 UTC 2023
 JVMLevel=
-LSID=urn\:lsid\:8080.gpserver.ip-172-31-26-71.ip-172-31-26-71.ec2.internal\:genepatternmodules\:676\:3.13
+LSID=urn\:lsid\:genepattern.org\:module.analysis\:00435\:3.14
 author=Justin Lee;GenePattern Team
 commandLine=Rscript /opt/genepatt/src/Harmony_Wrapper_Script.R --file_list <Input.RDS.Files> --output_file <Output.Name>  <Data.Set.Names>  <Colors>  <reduction>  <dims.use>  <theta>  <lambda>  <sigma>  <nclust>  <tau>  <block.size>  <max.iter.harmony>  <max.iter.cluster>  <epsilon.cluster>  <epsilon.harmony>  <plot_convergence>  <verbose>  <reference_values>  <reduction.save>  <project.dim>  <assay.use> <stop.early.cluster>   <stop.early.harmony> <Group.Name>
 cpuType=any
@@ -352,4 +352,4 @@ src.repo=https\://github.com/redpanda185/Harmony_GenePattern_Wrapper
 taskDoc=
 taskType=
 userid=jzl010
-version=Added Documentation URL
+version=give LSID
