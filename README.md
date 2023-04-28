@@ -24,8 +24,8 @@ Here are the basic parameters you will need in order to run the Harmony module. 
   2. **Output Name (required)**
      - The prefix that you would like to use to name your output files. One file will contain your Harmony-processed data, and another file will display the scatterplot made for the data.
  
-  3. Cell Types (optional)
-     - The names of the datasets you would like to run Harmony on. The list of names should be as long as the list of files. By default, the names of the cell types will be designated as the names of the files.
+  3. Data Set Names (optional)
+     - The names of the datasets you would like to apply with Harmony. The list of names should be as long as the list of datasets. By default, the names of the datasets will be designated as the names of the files.
   
   4. Group Name (optional)
      - The name of the metadata column you would like to group by during visualization. If no group name is specified, then Harmony will group by dataset by default.
