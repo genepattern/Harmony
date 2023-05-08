@@ -1,9 +1,20 @@
 # About Harmony
 
 ## What is Harmony?
-Harmony is a tool used to correct batch effects in single-cell RNA seq datasets. <br>
+Harmony is a tool used to correct batch effects in single-cell RNA seq datasets. Batch effects are differences in your dataset that don't reflect biological phenomena that are caused by technical effects that don't reflect underlying biology. As seen in the plot below, this can lead to the data becoming separated by non-biological factors. Harmony aims to remove these batch effects, allowing for the integration of multiple different datasets.
+![Alt text](gpunit/outputs/SideToSidePlot.png?raw=true "Harmony")
  
 ## How to use Harmony
+To use the Harmony module, you will need to have put your scRNA-seq data through the Seurat pipeline available on GenePattern (Seurat.QC --> Seurat.Preprocessing). The user must run Seurat on each condition that they wish to batch correct for. Once Harmony has been completed, the module will output four files:
+
+**Harmonized Data** - An RDS file containing a Seurat object with the Harmony-processed data. The Harmony-adjusted principal components can be found in the "harmony" column under the "reduction" slot in the Seurat object. The name of this file is specified by the "Output Name" parameter.
+
+**Before Harmony Plot** - A PNG file showing a scatterplot of the dimensionality-reduced data before Harmony. The method of dimensionality-reduction shown can be specified by the "reduction" parameter.
+
+**After Harmony Plot** - A PNG file showing a scatterplot of the data post-Harmony.
+
+**Side To Side Plot** - A PNG file showing the Before Harmony Plot and After Harmony Plot side by side for debugging purposes. 
+
 ### Basic Parameters
 Here are the basic parameters you will need in order to run the Harmony module. <br>
 
@@ -13,8 +24,8 @@ Here are the basic parameters you will need in order to run the Harmony module. 
   2. **Output Name (required)**
      - The prefix that you would like to use to name your output files. One file will contain your Harmony-processed data, and another file will display the scatterplot made for the data.
  
-  3. Cell Types (optional)
-     - The names of the datasets you would like to run Harmony on. The list of names should be as long as the list of files. By default, the names of the cell types will be designated as the names of the files.
+  3. Data Set Names (optional)
+     - The names of the datasets you would like to apply with Harmony. The list of names should be as long as the list of datasets. By default, the names of the datasets will be designated as the names of the files.
   
   4. Group Name (optional)
      - The name of the metadata column you would like to group by during visualization. If no group name is specified, then Harmony will group by dataset by default.
@@ -89,6 +100,7 @@ These parameters are for more advanced use. They are all optional. <br>
   - Harmony was developed by the Raychaudhuri Lab.
   - Original Harmony GitHub repo: https://github.com/immunogenomics/harmony
   - Harmony paper: https://pubmed.ncbi.nlm.nih.gov/31740819/
+  - Docker image used: https://hub.docker.com/r/jzl010/harmony
 
 ## Citation
   Ilya Korsunsky, Nghia Millard, Jean Fan, Kamil Slowikowski, Fan Zhang, Kevin Wei, Yuriy Baglaenko, Michael Brenner, Po-Ru Loh, Soumya Raychaudhuri, Fast, sensitive and accurate integration of single-cell data with Harmony, Nature Methods, 18 November 2019, https://doi.org/10.1038/s41592-019-0619-0
