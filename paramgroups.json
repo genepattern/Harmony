@@ -6,7 +6,7 @@
         "parameters": [
             "Input.RDS.Files",
             "Output.Name",
-            "Data.Set.Names",
+            "Data.Set.Labels",
             "Group.Name",
             "Colors"
         ]
