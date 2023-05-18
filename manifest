@@ -1,11 +1,11 @@
 #Harmony
-#Thu May 18 06:21:44 UTC 2023
+#Thu May 18 17:37:26 UTC 2023
 JVMLevel=
 LSID=urn\:lsid\:genepattern.org\:module.analysis\:00435\:3.14
 author=Justin Lee;GenePattern Team
 commandLine=Rscript /opt/genepatt/src/Harmony_Wrapper_Script.R --file_list <Input.RDS.Files> --output_file <Output.Name>  <Data.Set.Labels>  <Colors>  <reduction>  <dims.use>  <theta>  <lambda>  <sigma>  <nclust>  <tau>  <block.size>  <max.iter.harmony>  <max.iter.cluster>  <epsilon.cluster>  <epsilon.harmony>  <plot_convergence>  <verbose>  <reference_values>  <reduction.save>  <project.dim>  <assay.use> <stop.early.cluster>   <stop.early.harmony> <Group.Name>
 cpuType=any
-description=Harmony is a batch correction tool. Upon use, this module will produce three scatterplots. One plot will show the data pre-Harmony, and can be found in the 'BeforeHarmonyPlot.png' file. In this plot, the x and y axes represent the 1st and 2nd principal components from PCA dimensional reduction (unless specified otherwise by the user). Another plot will show the data post-Harmony, and can be found in the 'AfterHarmonyPlot.png' file. In this plot, the x and y axes the same dimensions used in the pre-Harmony plot are shown, but adjusted by Harmony. Lastly, the third plot shows the pre-Harmony and post-Harmony plots side by side for comparison.\nDockerhub\: https\://hub.docker.com/r/genepattern/harmony
+description=Harmony is a batch correction tool. Upon use, this module will produce three scatterplots. One plot will show the data pre-Harmony, and can be found in the 'BeforeHarmonyPlot.png' file. In this plot, the x and y axes represent the 1st and 2nd principal components from PCA dimensional reduction (unless specified otherwise by the user). Another plot will show the data post-Harmony, and can be found in the 'AfterHarmonyPlot.png' file. In this plot, the x and y axes the same dimensions used in the pre-Harmony plot are shown, but adjusted by Harmony. Lastly, the third plot shows the pre-Harmony and post-Harmony plots side by side for comparison.
 documentationUrl=https\://github.com/genepattern/Harmony/blob/develop/README.md
 fileFormat=
 job.cpuCount=
@@ -349,8 +349,8 @@ p9_value=
 privacy=private
 publicationDate=04/27/2023 16\:05 
 quality=preproduction
-src.repo=https\://github.com/redpanda185/Harmony_GenePattern_Wrapper
+src.repo=https\://github.com/genepattern/Harmony
 taskDoc=
 taskType=
 userid=jzl010
-version=Specified docker image version
+version=Removed dockerhub tag and reference from description
