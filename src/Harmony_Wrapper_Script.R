@@ -6,6 +6,8 @@ library(cowplot)
 library(xfun)
 library(ggplot2)
 library(R.devices)
+library(gganimate)
+library(gifski)
 
 parser = OptionParser()
 parser <- add_option(parser, c("--file_list"), 
@@ -23,6 +25,10 @@ parser <- add_option(parser, c("--group_name"),
 parser <- add_option(parser, c("--colors"),
                      help = "The colors you want to use to label the groups specified by the group_name variable, separated by commas",
                      default = NULL)
+parser <- add_option(parser, c("--animate"),
+                     help = "Whether to produce an animation that displays the transition from the original data to the harmonized data",
+                     type = 'logical',
+                     default = FALSE)
 # =================================================
 # Advanced options
 parser <- add_option(parser, c("--reduction"),
@@ -124,6 +130,9 @@ parser <- add_option(parser, c("--assay.use"),
 parser <- add_option(parser, c("--project.dim"),
                      help = "Project dimension reduction loadings. Default TRUE.",
                      default = TRUE)
+parser <- add_option(parser, c("--animation.iterations"),
+                     help = "Number of iterations to show in the animation.",
+                     type = "integer")
 
 
 print('================================================')
@@ -282,6 +291,74 @@ visualize <- function(harmonyObj, colors, file_name){
   print("Plots made and saved!")
 }
 
+#adds more iterations of harmony to the existing harmony object for animation 
+getHarmonyIterations <- function(data, args){
+  for(iteration in 1:args$animation.iterations){
+    data <- data %>% 
+      RunHarmony(group.by = "dataset_name", 
+                 reduction = args$reduction,
+                 dims.use = args$dims.use,
+                 theta = args$theta,
+                 lambda = args$lambda,
+                 sigma = args$sigma,
+                 nclust = args$nclust,
+                 tau = args$tau,
+                 block.size = args$block.size,
+                 max.iter.harmony = iteration,
+                 max.iter.cluster = args$max.iter.cluster,
+                 epsilon.cluster = epsilon.cluster,
+                 epsilon.harmony = epsilon.harmony,
+                 plot_convergence = args$plot_convergence,
+                 verbose = args$verbose,
+                 reference_values = args$reference_values,
+                 reduction.save = paste0("harmony_iter_", iteration),
+                 assay.use = args$assay.use,
+                 project.dim = args$project.dim
+                 )
+  }
+  return(data)
+}
+#Creates the Harmony animation from the object created by getHarmonyIterations()
+makeAnimation <- function(harmonyobj){
+  plot <- DimPlot(harmonyobj, reduction = args$reduction, group.by = "dataset_name", combine = FALSE)
+  data <- plot[[1]]$data #Save PCA embeddings to a data frame
+  data <- mutate(data, iter = "0", .before = "dataset_name")
+  iteration_names <- rep("harmony_iter_", args$animation.iterations) %>%
+    paste0(1:args$animation.iterations)
+  #Add embeddings from the Harmony iterations to new columns in the data frame  
+  for(iteration in 1:length(iteration_names)){
+    plot <- DimPlot(harmonyobj, 
+                    reduction = iteration_names[iteration], 
+                    group.by = "dataset_name", 
+                    combine = FALSE)
+    subdata <- plot[[1]]$data %>%
+      mutate(iter = (iteration), .before = "dataset_name")
+    colnames(subdata) <- colnames(data)
+    data <- rbind(data, subdata)
+  }
+  print("Making animation!")
+  p <- ggplot(
+    data = data,
+    mapping = aes(x = PC_1, y = PC_2, color = dataset_name)
+  ) +
+    geom_point(alpha = 0.63, shape = 19) +
+    labs(title = "Harmony Iteration {closest_state}")
+  print("ggplot made.")
+  p <- p +
+    transition_states(iter, transition_length = 2, state_length = 2, wrap = FALSE) +
+    ease_aes("cubic-in-out")
+  animation <- animate(
+    plot = p,
+    nframes = 200, width = 800, height = 900/1.41, res = 150, renderer = gifski_renderer())
+  dir.create = ("animation")
+  print("Animation made.")
+  filename = "harmony.gif"
+  print("Saving animation!")
+  anim_save(filename, animation = animation)
+}
 output <- run_harmony(panels, args)
 save_it(output, paste(args$output_file, '.rds', sep = ''))
 visualize(output, colorlist[[1]], args$output_file)
+if(args$animate){
+  makeAnimation(getHarmonyIterations(output, args))
+}

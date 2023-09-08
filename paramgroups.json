@@ -8,7 +8,8 @@
             "Output.Name",
             "Data.Set.Labels",
             "Group.Name",
-            "Colors"
+            "Colors",
+            "Animate"
         ]
     },
     {
@@ -35,7 +36,8 @@
             "reference_values",
             "reduction.save",
             "assay.use",
-            "project.dim"
+            "project.dim",
+            "animation.iterations"
         ]
     }
 ]
