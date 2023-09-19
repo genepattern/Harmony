@@ -1,5 +1,5 @@
 #Harmony
-#Thu Sep 14 19:57:52 UTC 2023
+#Tue Sep 19 19:31:40 UTC 2023
 JVMLevel=
 LSID=urn\:lsid\:genepattern.org\:module.analysis\:00435\:3.14
 author=Justin Lee;GenePattern Team
@@ -372,8 +372,8 @@ p9_prefix=--theta
 p9_prefix_when_specified=--theta 
 p9_type=java.lang.Float
 p9_value=
-privacy=private
-publicationDate=04/27/2023 16\:05 
+privacy=public
+publicationDate=09/19/2023 04\:22 
 quality=preproduction
 src.repo=https\://github.com/genepattern/Harmony
 taskDoc=
