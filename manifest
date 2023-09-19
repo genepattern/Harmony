@@ -1,5 +1,5 @@
 #Harmony
-#Tue Sep 19 19:31:40 UTC 2023
+#Tue Sep 19 19:36:02 UTC 2023
 JVMLevel=
 LSID=urn\:lsid\:genepattern.org\:module.analysis\:00435\:3.14
 author=Justin Lee;GenePattern Team
@@ -255,7 +255,7 @@ p26_value=TRUE\=TRUE;FALSE\=FALSE
 p27_MODE=
 p27_TYPE=Integer
 p27_default_value=3
-p27_description=Number of iterations to animate
+p27_description=Number of iterations to animate.
 p27_fileFormat=
 p27_flag=--animation.iterations 
 p27_name=animation.iterations
@@ -322,7 +322,7 @@ p5_value=
 p6_MODE=
 p6_TYPE=TEXT
 p6_default_value=FALSE
-p6_description=Whether or not to produce an animation of the Harmony iterations
+p6_description=Whether or not to produce an animation of the Harmony iterations.
 p6_fileFormat=
 p6_flag=--animate 
 p6_name=Animate
