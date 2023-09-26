@@ -4,13 +4,16 @@ $help
 [1] FALSE
 
 $file_list
-[1] "/opt/gpbeta_2/gp_home/users/jzl010/uploads/tmp/run1933396705467641413.tmp/Input.RDS.Files.list.txt"
+[1] "/opt/gpbeta_2/gp_home/users/jzl010/uploads/tmp/run4211494326110870706.tmp/Input.RDS.Files.list.txt"
 
 $output_file
 [1] "harmonized_data"
 
 $group_name
 [1] "dataset_name"
+
+$animate
+[1] TRUE
 
 $reduction
 [1] "pca"
@@ -31,10 +34,10 @@ $block.size
 [1] 0.05
 
 $max.iter.harmony
-[1] 2
+[1] 10
 
 $max.iter.cluster
-[1] 2
+[1] 20
 
 $epsilon.cluster
 [1] 5e-05
@@ -60,13 +63,16 @@ $reduction.save
 $project.dim
 [1] TRUE
 
+$animation.iterations
+[1] 3
+
 [1] "================================================"
-[1] "/opt/gpbeta_2/gp_home/users/jzl010/uploads/tmp/run1933396705467641413.tmp/Input.RDS.Files.list.txt"
+[1] "/opt/gpbeta_2/gp_home/users/jzl010/uploads/tmp/run4211494326110870706.tmp/Input.RDS.Files.list.txt"
 [1] "About to read"
-[1] "/opt/gpbeta_2/gp_home/users/jzl010/uploads/tmp/run4653117758377230361.tmp/Input.RDS.Files/1/HNSCC.rds"
+[1] "/opt/gpbeta_2/gp_home/users/jzl010/uploads/tmp/run1259376307251540394.tmp/Input.RDS.Files/1/HNSCC.rds"
 [1] "Using HNSCC as the name of the column"
 [1] "About to read"
-[1] "/opt/gpbeta_2/gp_home/users/jzl010/uploads/tmp/run3736923318873744857.tmp/Input.RDS.Files/2/MEL.rds"
+[1] "/opt/gpbeta_2/gp_home/users/jzl010/uploads/tmp/run1980157106422950912.tmp/Input.RDS.Files/2/MEL.rds"
 [1] "Using MEL as the name of the column"
 [1] "Saved file!"
 An object of class Seurat 
@@ -79,3 +85,7 @@ Active assay: RNA (499 features, 499 variable features)
 [1] "Using BeforeHarmonyPlot.png  as file name for the plot."
 [1] "Using SideToSidePlot.png  as file name for the plot."
 [1] "Plots made and saved!"
+[1] "Making animation!"
+[1] "ggplot made."
+[1] "Animation made."
+[1] "Saving animation!"

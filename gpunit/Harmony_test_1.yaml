@@ -1,15 +1,16 @@
 
-name: Harmony Test 1
-# description: created from job 91351
-# ET(ms): 585000# from server:  https://beta.genepattern.org/gp/
+name: gpunit_92953
+# description: created from job 92953
+# ET(ms): 368000# from server:  https://beta.genepattern.org/gp/
 module: Harmony
-# lsid: urn:lsid:genepattern.org:module.analysis:00435
+# lsid: urn:lsid:genepattern.org:module.analysis:00435:1.2
 params: 
-    "Input.RDS.Files": ["./inputs/HNSCC.rds", "./inputs/MEL.rds"]
+    "Input.RDS.Files": "inputs/Input.RDS.Files.list.txt"
     "Output.Name": "harmonized_data"
-    "Data.Set.Names": "[]"
+    "Data.Set.Labels": "[]"
     "Group.Name": "dataset_name"
     "Colors": "[]"
+    "Animate": "TRUE"
     "reduction": "pca"
     "dims.use": "[]"
     "theta": "2"
@@ -18,8 +19,8 @@ params:
     "nclust": ""
     "tau": "0"
     "block.size": "0.05"
-    "max.iter.harmony": "2"
-    "max.iter.cluster": "2"
+    "max.iter.harmony": "10"
+    "max.iter.cluster": "20"
     "stop.early.cluster": "TRUE"
     "epsilon.cluster": "0.00005"
     "stop.early.harmony": "TRUE"
@@ -30,6 +31,7 @@ params:
     "reduction.save": "harmony"
     "assay.use": ""
     "project.dim": "TRUE"
+    "animation.iterations": "3"
 
 assertions: 
     jobStatus: success
@@ -38,5 +40,6 @@ assertions:
         BeforeHarmonyPlot.png: !!null
         SideToSidePlot.png: !!null
         harmonized_data.rds: !!null
+        harmony.gif: !!null
         stderr.txt: !!null
         stdout.txt: !!null
