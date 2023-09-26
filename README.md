@@ -3,6 +3,8 @@
 ## What is Harmony?
 Harmony is a tool used to correct batch effects in single-cell RNA seq datasets. Batch effects are differences in your dataset that don't reflect biological phenomena that are caused by technical effects that don't reflect underlying biology. As seen in the plot below, this can lead to the data becoming separated by non-biological factors. Harmony aims to remove these batch effects, allowing for the integration of multiple different datasets.
 ![Alt text](gpunit/outputs/SideToSidePlot.png?raw=true "Harmony")
+
+![](https://github.com/genepattern/Harmony/blob/develop/gpunit/outputs/harmony.gif)
  
 ## How to use Harmony
 To use the Harmony module, you will need to have put your scRNA-seq data through the Seurat pipeline available on GenePattern, as seen below:
@@ -17,7 +19,7 @@ The user must run Seurat on each condition that they wish to batch correct for. 
 
 **Side To Side Plot** - A PNG file showing the Before Harmony Plot and After Harmony Plot side by side for debugging purposes.
 
-**Animation** - A GIF animation showing a smoother transition between each iteration of Harmony's batch-correction.
+**Animation** - A GIF animation showing a smoother transition between each iteration of Harmony's batch-correction, as shown above.
 
 ### Basic Parameters
 Here are the basic parameters you will need in order to run the Harmony module. <br>
