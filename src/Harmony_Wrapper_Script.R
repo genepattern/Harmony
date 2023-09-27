@@ -229,10 +229,10 @@ run_harmony <- function(datalist, args){
   data$dataset_name <- metadata_list
   #Runs all of the pre-processing steps prior to running Harmony
   data <- data %>%
-    Seurat::NormalizeData(verbose = FALSE) %>%
-    FindVariableFeatures(selection.method = "vst", nfeatures = 2000) %>%
-    ScaleData(verbose = FALSE) %>%
-    RunPCA(pc.genes = pbmc@var.genes, npcs = 20, verbose = FALSE)
+    Seurat::NormalizeData(assay = "RNA") %>%
+    FindVariableFeatures(assay = "RNA") %>%
+    ScaleData(assay = "RNA") %>%
+    RunPCA(assay = "RNA", npcs = 30)
   harmonizedData <- data %>%
     RunHarmony(group.by = "dataset_name", 
                reduction = args$reduction,
