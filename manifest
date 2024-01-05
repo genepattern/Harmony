@@ -1,8 +1,9 @@
 #Harmony
-#Tue Sep 19 19:36:02 UTC 2023
+#Fri Jan 05 21:55:26 UTC 2024
 JVMLevel=
-LSID=urn\:lsid\:genepattern.org\:module.analysis\:00435\:3.14
+LSID=urn\:lsid\:genepattern.org\:module.analysis\:00435\:1.3
 author=Justin Lee;GenePattern Team
+categories=batch correction
 commandLine=Rscript /opt/genepatt/src/Harmony_Wrapper_Script.R --file_list <Input.RDS.Files> --output_file <Output.Name>  <Data.Set.Labels>  <Colors>  <reduction>  <dims.use>  <theta>  <lambda>  <sigma>  <nclust>  <tau>  <block.size>  <max.iter.harmony>  <max.iter.cluster>  <epsilon.cluster>  <epsilon.harmony>  <plot_convergence>  <verbose>  <reference_values>  <reduction.save>  <project.dim>  <assay.use> <stop.early.cluster>   <stop.early.harmony> <Group.Name> <Animate> <animation.iterations>
 cpuType=any
 description=Harmony is a batch correction tool. Upon use, this module will produce three scatterplots. One plot will show the data pre-Harmony, and can be found in the 'BeforeHarmonyPlot.png' file. In this plot, the x and y axes represent the 1st and 2nd principal components from PCA dimensional reduction (unless specified otherwise by the user). Another plot will show the data post-Harmony, and can be found in the 'AfterHarmonyPlot.png' file. In this plot, the x and y axes the same dimensions used in the pre-Harmony plot are shown, but adjusted by Harmony. Lastly, the third plot shows the pre-Harmony and post-Harmony plots side by side for comparison.
@@ -373,10 +374,10 @@ p9_prefix_when_specified=--theta
 p9_type=java.lang.Float
 p9_value=
 privacy=public
-publicationDate=09/19/2023 04\:22 
-quality=preproduction
+publicationDate=09/20/2023 10\:53 
+quality=production
 src.repo=https\://github.com/genepattern/Harmony
 taskDoc=
-taskType=
-userid=jzl010
-version=Added animations
+taskType=batch correction
+userid=edwin5588
+version=Added batch correction tag

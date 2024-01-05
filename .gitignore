@@ -10,3 +10,5 @@ src/.Rhistory
 testdata/.DS_Store
 Testing/.Rdata
 Testing/.Rhistory
+*.rds
+*.rds
